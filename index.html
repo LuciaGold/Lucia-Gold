@@ -42,13 +42,14 @@
     /* =========================================================
        2. ESTILOS DE LA CABECERA Y MENÚ
        ========================================================= */
-    header {
+  header {
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(207, 161, 68, 0.2);
       position: sticky;
       top: 0;
       z-index: 100;
+      overflow: visible; /* Permite que las trazas de las letras se muestren completas */
     }
 
     .nav-container {
@@ -58,19 +59,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      overflow: visible;
     }
 
-   .logo {
+  .logo {
       font-family: 'Great Vibes', 'Caveat', cursive;
-      font-size: 2.5rem;
+      font-size: 2.3rem; /* Tamaño óptimo para evitar desbordes */
       font-weight: 700;
       background: var(--gold-metallic);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-decoration: none;
       display: inline-block;
-      padding-left: 0.5rem; /* Da un respiro a la izquierda */
-      line-height: 1.2;
+      padding: 0.2rem 0.8rem 0.2rem 0.4rem; /* Margen interno alrededor de las letras */
+      line-height: 1.3;
+      white-space: nowrap; /* Evita que la palabra se divida o salte */
     }
 
     nav ul { display: flex; list-style: none; gap: 1.5rem; }
