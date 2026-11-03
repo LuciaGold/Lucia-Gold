@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LUCIA GOLD | Un espacio para sanar, sentir y volver a ti</title>
   
-  <!-- Tipografías de Google Fonts -->
+  <!-- Fuentes de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
   
   <style>
-    /* =========================================================
-       1. VARIABLES DE COLORES Y ESTILOS GENERALES
-       ========================================================= */
+    /* ================================================================= */
+    /* 1. VARIABLES Y CONFIGURACIÓN GLOBAL                               */
+    /* ================================================================= */
     :root {
       --text-dark: #2c2c2c;
       --text-muted: #555555;
+      
+      /* Dorado Metálico Brillante */
       --gold-accent: #cfa144;
       --gold-light: #fef8eb;
       --gold-metallic: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
       
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+      
+      /* Paleta Artística de Pintura Abstracta */
       --rosa-palido: #fbf0f0;
       --celeste-puro: #eef6fc;
       --lila-suave: #f4edf8;
@@ -30,7 +34,11 @@
       --blanco-perla: #fdfdfb;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -39,17 +47,16 @@
       background-color: var(--blanco-perla);
     }
 
-    /* =========================================================
-       2. ESTILOS DE LA CABECERA Y MENÚ
-       ========================================================= */
-  header {
+    /* ================================================================= */
+    /* 2. NAVEGACIÓN PRINCIPAL                                           */
+    /* ================================================================= */
+    header {
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(207, 161, 68, 0.2);
       position: sticky;
       top: 0;
       z-index: 100;
-      overflow: visible; /* Permite que las trazas de las letras se muestren completas */
     }
 
     .nav-container {
@@ -59,63 +66,121 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      overflow: visible;
     }
 
- .logo {
+    /* Logo Dorado Cursiva Estilizada */
+    .logo {
       font-family: 'Great Vibes', 'Caveat', cursive;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 700;
       background: var(--gold-metallic);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-decoration: none;
       display: inline-block;
-      padding-right: 15px; /* ¡ESTO evita que se corte la 'd' final! */
-      padding-left: 5px;
-      line-height: 1.2;
+      letter-spacing: 1px;
+      padding-right: 10px;
+      filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.15));
+      transition: transform 0.3s ease;
     }
 
-    nav ul { display: flex; list-style: none; gap: 1.5rem; }
-    nav a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
-    nav a:hover, nav a.active { color: var(--gold-accent); }
+    .logo:hover {
+      transform: scale(1.03);
+    }
 
-    /* =========================================================
-       3. ESTILOS DE SECCIONES Y TARJETAS ARTÍSTICAS
-       ========================================================= */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--gold-accent);
+    }
+
+    /* ================================================================= */
+    /* 3. ELEMENTOS DECORATIVOS Y ARTÍSTICOS                             */
+    /* ================================================================= */
+    .abstract-shape {
+      position: absolute;
+      border-radius: 50% 40% 60% 30% / 40% 50% 30% 60%;
+      filter: blur(35px);
+      opacity: 0.55;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .petal-1 { width: 280px; height: 200px; background: #f1d4d4; top: -40px; left: -50px; }
+    .petal-2 { width: 250px; height: 250px; background: #d0e6f5; bottom: -30px; right: -20px; }
+    .petal-3 { width: 220px; height: 180px; background: #e2d1f0; top: 30%; right: 10%; }
+    .petal-4 { width: 260px; height: 200px; background: #f7eed2; bottom: 10%; left: 5%; }
+    .petal-5 { width: 240px; height: 220px; background: #d4ebd9; top: 15%; left: 8%; }
+
     .art-section {
       position: relative;
       padding: 5rem 2rem;
       overflow: hidden;
-      background-size: cover;
-      background-position: center;
     }
 
-    /* Fondos de cada sección */
-    #inicio { background-color: var(--rosa-palido); }
-    #libros { background: linear-gradient(135deg, var(--blanco-perla) 0%, var(--amarillo-perla) 50%, var(--rosa-palido) 100%); }
+    .section-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Fondos específicos por sección */
+    #inicio { background: linear-gradient(135deg, var(--rosa-palido) 0%, var(--blanco-perla) 60%, var(--lila-suave) 100%); }
     #meditaciones { background: linear-gradient(135deg, var(--verde-menta) 0%, var(--blanco-perla) 60%, var(--celeste-puro) 100%); }
     #danza { background: linear-gradient(135deg, var(--amarillo-perla) 0%, var(--blanco-perla) 60%, var(--verde-menta) 100%); }
     #infantil { background: linear-gradient(135deg, var(--celeste-puro) 0%, var(--blanco-perla) 60%, var(--lila-suave) 100%); }
+    #libros { background: linear-gradient(135deg, var(--blanco-perla) 0%, var(--amarillo-perla) 50%, var(--rosa-palido) 100%); }
     #contacto { background: linear-gradient(135deg, var(--rosa-palido) 0%, var(--blanco-perla) 100%); }
 
-    .section-content { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
-    .section-title { text-align: center; margin-bottom: 3rem; }
-    .section-title h2 { font-size: 2.2rem; color: var(--gold-accent); font-weight: 400; }
-    .section-title p { color: var(--text-muted); font-size: 1.05rem; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-    /* Tarjetas con bordes orgánicos */
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--gold-accent);
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Tarjetas Orgánicas e Irregulares */
     .art-card {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
       padding: 2.5rem;
-      border: 1px solid rgba(207, 161, 68, 0.3);
+      border: 1px solid rgba(207, 161, 68, 0.25);
       box-shadow: var(--shadow-soft);
+      transition: all 0.4s ease;
       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     }
 
+    .art-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+      border-color: var(--gold-accent);
+    }
+
     .quote-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.9);
       padding: 2.5rem;
       max-width: 800px;
       margin: 2rem auto 0 auto;
@@ -124,11 +189,55 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .quote-card p {
+      font-style: italic;
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .quote-author {
+      font-weight: 600;
+      color: var(--gold-accent);
+      text-align: right;
+    }
+
+    /* Estilos para la sección de libros */
     .book-grid {
       display: grid;
       grid-template-columns: 300px 1fr;
       gap: 3rem;
       align-items: center;
+    }
+
+    .book-cover-wrapper {
+      text-align: center;
+    }
+
+    .book-cover {
+      width: 100%;
+      max-width: 270px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      object-fit: cover;
+    }
+
+    .book-details h3 {
+      font-size: 1.8rem;
+      color: var(--gold-accent);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .book-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .book-description p {
+      margin-bottom: 1rem;
     }
 
     .grid-cards {
@@ -137,6 +246,7 @@
       gap: 2.5rem;
     }
 
+    /* Botones Estilizados */
     .btn {
       display: inline-block;
       padding: 0.85rem 2rem;
@@ -145,15 +255,38 @@
       text-decoration: none;
       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
       font-weight: 600;
+      transition: all 0.3s;
       border: none;
       cursor: pointer;
       margin-top: 1rem;
     }
-    .btn:hover { background-color: #b58a32; }
-    .btn-outline { background-color: transparent; color: var(--gold-accent); border: 1px solid var(--gold-accent); }
 
-    footer { background-color: #ffffff; border-top: 1px solid var(--gold-light); text-align: center; padding: 2.5rem; color: var(--text-muted); font-size: 0.9rem; }
+    .btn:hover {
+      background-color: #b58a32;
+      transform: scale(1.02);
+    }
 
+    .btn-outline {
+      background-color: transparent;
+      color: var(--gold-accent);
+      border: 1px solid var(--gold-accent);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--gold-light);
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid var(--gold-light);
+      text-align: center;
+      padding: 2.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Adaptabilidad a dispositivos móviles */
     @media (max-width: 768px) {
       .book-grid { grid-template-columns: 1fr; }
       .nav-container { flex-direction: column; gap: 0.5rem; }
@@ -164,7 +297,7 @@
 <body>
 
   <!-- ================================================================= -->
-  <!-- 4. MENÚ DE NAVEGACIÓN SUPERIOR (Aquí está Libros en 4.º lugar)      -->
+  <!-- 4. ENCABEZADO Y MENÚ DE NAVEGACIÓN                                -->
   <!-- ================================================================= -->
   <header>
     <div class="nav-container">
@@ -182,26 +315,29 @@
     </div>
   </header>
 
-
   <!-- ================================================================= -->
   <!-- 5. SECCIÓN INICIO                                                 -->
   <!-- ================================================================= -->
-  <section id="inicio" class="art-section" style="text-align: center;">
-    <div class="section-content">
-      <h1 style="font-size: 2.6rem; color: var(--text-dark); font-weight: 400; margin-bottom: 1rem;">
-        Un espacio para sanar, sentir y volver a ti
-      </h1>
-      <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+  <section id="inicio" class="art-section" style="text-align: center; padding-top: 2rem;">
+    <div class="section-content" style="max-width: 900px; margin: 0 auto;">
+      
+      <!-- Imagen principal unificada con la libélula -->
+      <div style="margin-bottom: 2.5rem; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(207, 161, 68, 0.2); border: 2px solid rgba(207, 161, 68, 0.4);">
+        <img src="Libelula.jpg" alt="Lucia Gold - Un espacio para sanar" style="width: 100%; height: auto; display: block;">
+      </div>
+
+      <!-- Texto descriptivo de bienvenida -->
+      <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 2.5rem auto; line-height: 1.6;">
         Transformando la ansiedad y el dolor en movimiento, voz y un refugio de paz.
       </p>
 
+      <!-- Tarjeta de cita reflexiva -->
       <div class="quote-card">
         <p>"Si hoy sientes miedo o ansiedad, recuerda que no estás perdida. Con el tiempo he comprendido que esos momentos difíciles no son el final, sino simplemente el proceso necesario para encontrar nuestros verdaderos caminos."</p>
-        <div style="font-weight: 600; color: var(--gold-accent); text-align: right;">— Lucia Gold</div>
+        <div class="quote-author">— Lucia Gold</div>
       </div>
     </div>
   </section>
-
 
   <!-- ================================================================= -->
   <!-- 6. SECCIÓN MEDITACIONES GUIADAS                                   -->
@@ -213,133 +349,251 @@
         <p>Espacios de quietud y respiración para calmar el sistema nervioso y reconectar con el presente.</p>
       </div>
 
-      <div class="grid-cards" style="margin-bottom: 3.5rem;">
+      <!-- Cuadrícula ajustada a 2 columnas centradas -->
+      <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 350px)); justify-content: center; gap: 2.5rem; margin-bottom: 3.5rem;">
+        
+        <!-- Cajetilla 1: Flor de Loto y Vela (YouTube) -->
         <div class="art-card" style="text-align: center;">
+          <img src="Meditacion1.png" alt="Flor de Loto y Vela" class="card-icon" style="width: 100%; max-width: 220px; height: auto; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.15);">
           <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Canal de YouTube</h3>
           <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Sesiones completas de meditación guiada y paisajes sonoros.</p>
           <a href="https://www.youtube.com/@rincon_lu" target="_blank" class="btn">Ver en YouTube</a>
         </div>
 
+        <!-- Cajetilla 2: Cuarzos Iridiscentes (TikTok) -->
         <div class="art-card" style="text-align: center;">
+          <img src="Meditacion2.png" alt="Cuarzos de sanación" class="card-icon" style="width: 100%; max-width: 220px; height: auto; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.15);">
           <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Comunidad en TikTok</h3>
           <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Pausas conscientes breves y ejercicios de respiración.</p>
           <a href="https://www.tiktok.com/@rincon_de_lu" target="_blank" class="btn btn-outline">Ver en TikTok</a>
         </div>
 
-        <div class="art-card" style="text-align: center;">
-          <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">¿Cómo Meditar?</h3>
-          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Encuentra un lugar tranquilo y permite que la voz te guíe.</p>
-          <a href="#contacto" class="btn btn-outline">Sugerir un Tema</a>
-        </div>
       </div>
     </div>
   </section>
-
 
   <!-- ================================================================= -->
   <!-- 7. SECCIÓN TALLER DE DANZA                                        -->
   <!-- ================================================================= -->
   <section id="danza" class="art-section">
-    <div class="section-content">
-      <div class="section-title">
-        <h2>Taller de Danza y Liberación Emocional</h2>
-        <p>El cuerpo guarda memorias que la mente a veces no puede expresar.</p>
+    <div class="section-content" style="max-width: 900px; margin: 0 auto;">
+      
+      <div class="section-title" style="text-align: center;">
+        <h2>Taller de Danza</h2>
+        <p>Libera tensiones, conecta con tu cuerpo y exprésate a través del ritmo y la percusión consciente.</p>
       </div>
 
-      <div class="art-card" style="max-width: 750px; margin: 0 auto; text-align: center;">
-        <h3 style="color: var(--gold-accent); margin-bottom: 1rem; font-size: 1.6rem;">Sanación Somática y Movimiento Libre</h3>
-        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem;">
-          Nuestros talleres presenciales están diseñados para reconectar con la sabiduría del cuerpo a través del movimiento libre.
-        </p>
+      <!-- Tarjeta destacada con la ilustración de Danza -->
+      <div class="art-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem; margin-bottom: 2.5rem;">
         
-        <!-- FOTO DE DANZA (Asegúrate de que tu imagen se llame danza.png o danza.jpg) -->
-        <div style="width: 100%; max-width: 380px; margin: 1.5rem auto;">
-          <img src="danza.png" alt="Taller de Danza" style="width: 100%; height: auto; border-radius: 18px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
+        <!-- Imagen del Taller de Danza -->
+        <div style="width: 100%; max-width: 480px; margin-bottom: 1.8rem; overflow: hidden; border-radius: 16px; border: 1.5px solid var(--gold-accent, #CFA144); box-shadow: 0 8px 25px rgba(207, 161, 68, 0.2);">
+          <img src="Danza.jpg" alt="Taller de Danza y Percusión LUCIA GOLD" style="width: 100%; height: auto; display: block;">
         </div>
 
-        <a href="#contacto" class="btn">Consultar Próximos Talleres</a>
+        <h3 style="color: var(--gold-accent, #CFA144); font-size: 1.6rem; margin-bottom: 1rem;">
+          Expresión Corporal y Ritmo
+        </h3>
+        
+        <p style="color: var(--text-muted, #666); font-size: 1.05rem; max-width: 650px; line-height: 1.6; margin-bottom: 2rem;">
+          Un encuentro guiado para habitar el presente, soltar el control y transformar las emociones a través de la danza libre, el movimiento orgánico y los ritmos en vivo.
+        </p>
+
+        <a href="#contacto" class="btn">Reservar mi Plaza</a>
+
       </div>
+
     </div>
   </section>
 
-
   <!-- ================================================================= -->
-  <!-- 8. SECCIÓN RINCÓN INFANTIL                                        -->
+  <!-- 8. SECCIÓN RINCON INFANTIL                                        -->
   <!-- ================================================================= -->
-  <section id="infantil" class="art-section">
+  <section id="infantil" class="art-section" style="background: rgba(255, 255, 255, 0.5);">
     <div class="section-content">
       <div class="section-title">
         <h2>Rincón Infantil</h2>
-        <p>Un espacio de ternura, cuentos y calma para los más pequeños.</p>
+        <p>Un espacio seguro y mágico para los más pequeños, lleno de cuentos y calma.</p>
       </div>
 
-      <div class="grid-cards" style="max-width: 950px; margin: 0 auto;">
+      <!-- Cuadrícula de 2 cajetillas centradas -->
+      <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 350px)); justify-content: center; gap: 2.5rem; margin-bottom: 3.5rem;">
+        
+        <!-- Cajetilla 1: Cuentos e Historias con los 5 cuentos integrados -->
         <div class="art-card" style="text-align: center;">
-          <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Meditaciones Infantil</h3>
-          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.2rem;">Ejercicios de respiración y visualizaciones mágicas.</p>
-          <a href="https://www.youtube.com/@rincon_lu" target="_blank" class="btn">Escuchar</a>
+          <img src="Cuentos_niños.png" alt="Cuentos infantiles para dormir" class="card-icon" style="width: 100%; max-width: 220px; height: auto; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.15);">
+          <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Cuentos para Dormir</h3>
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Historias dulces y relajantes para acompañar el sueño de los niños.</p>
+          
+          <!-- Elemento desplegable con los 5 cuentos ocultos -->
+          <details style="cursor: pointer; text-align: left; margin-top: 1rem;">
+            <summary style="background: var(--gold-accent); color: #fff; padding: 0.7rem 1.5rem; border-radius: 30px; text-align: center; font-weight: 600; font-size: 0.95rem; list-style: none; outline: none; box-shadow: 0 4px 12px rgba(207, 161, 68, 0.25);">
+              📖 Ver los 5 Cuentos Especiales
+            </summary>
+
+            <div style="margin-top: 1rem; padding: 1rem; background: rgba(253, 248, 240, 0.9); border-radius: 10px; border: 1px dashed var(--gold-accent);">
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                
+                <li style="margin-bottom: 0.8rem;">
+                  <a href="https://youtu.be/rRNoUPcgsNA" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                    ✨ 1. Título de tu primer cuento
+                  </a>
+                </li>
+
+                <li style="margin-bottom: 0.8rem;">
+                  <a href="https://youtu.be/AqEjU51nxzY" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                    ✨ 2. Título de tu segundo cuento
+                  </a>
+                </li>
+
+                <li style="margin-bottom: 0.8rem;">
+                  <a href="https://youtu.be/gf6fBRkGl_0" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                    ✨ 3. Título de tu tercer cuento
+                  </a>
+                </li>
+
+                <li style="margin-bottom: 0.8rem;">
+                  <a href="https://youtu.be/KgXAYZYQ6f0" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                    ✨ 4. Título de tu cuarto cuento
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://youtu.be/SHetRcUI_zo" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                    ✨ 5. Título de tu quinto cuento
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </details>
+
         </div>
 
+        <!-- Cajetilla 2: Meditación y Calma -->
         <div class="art-card" style="text-align: center;">
-          <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Cuentos para Soñar</h3>
-          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.2rem;">Relatos breves narrados con voz suave antes de dormir.</p>
-          <a href="https://www.tiktok.com/@rincon_de_lu" target="_blank" class="btn btn-outline">Ver Cuentos</a>
+          <img src="Meditacion_niños.png" alt="Meditación para niños" class="card-icon" style="width: 100%; max-width: 220px; height: auto; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.15);">
+          <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Respiración y Calma</h3>
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Ejercicios sencillos de respiración diseñados especialmente para niños.</p>
+          <a href="#contacto" class="btn btn-outline">Explorar</a>
         </div>
+
       </div>
     </div>
   </section>
 
-
   <!-- ================================================================= -->
-  <!-- 9. SECCIÓN LIBROS (Obras Literarias)                              -->
+  <!-- 9. SECCIÓN LIBROS (CON EXTRACTO INTERACTIVO DEL CAPÍTULO 17)      -->
   <!-- ================================================================= -->
   <section id="libros" class="art-section">
+    <div class="abstract-shape petal-2"></div>
+    <div class="abstract-shape petal-4"></div>
+
     <div class="section-content">
       <div class="section-title">
         <h2>Obras Literarias</h2>
-        <p>Escritas desde la experiencia vivida, el amor incondicional y la fuerza.</p>
+        <p>Escritas desde la experiencia vivida, el amor incondicional y la fuerza para romper el silencio.</p>
       </div>
 
       <div class="art-card book-grid">
-        <!-- Portada del libro (Asegúrate de que tu imagen se llame portada_ELLAS.jpg) -->
         <div class="book-cover-wrapper">
-          <img src="portada_ELLAS.jpg" alt="Portada Oficial de ELLAS" style="width: 100%; max-width: 270px; height: auto; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.12);">
+          <img src="portada_ELLAS.jpg" alt="Portada Oficial de ELLAS - Lucia Gold" class="book-cover">
         </div>
-
-        <!-- Descripción y detalles del libro -->
+        
         <div class="book-details">
-          <h3 style="font-size: 1.8rem; color: var(--gold-accent); margin-bottom: 0.5rem; font-weight: 500;">
-            ELLAS — Una historia de amor, resistencia y esperanza
-          </h3>
-          <div style="font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-            Por Lucia Gold | Obra Autobiográfica
+          <h3>ELLAS — Una historia de amor, resistencia y esperanza</h3>
+          <div class="book-subtitle">Por Lucia Gold | Obra Autobiográfica</div>
+          
+          <div class="book-description">
+            <p><strong>ELLAS</strong> es mucho más que un libro autobiográfico. Es el relato de una mujer que, a lo largo de su vida, ha tenido que enfrentarse a la violencia, al silencio, a la enfermedad y a situaciones que pusieron a prueba sus fuerzas, sin dejar de buscar una salida.</p>
+            <p>A través de sus recuerdos, la autora recorre su infancia, las huellas que dejan las experiencias difíciles, la maternidad, el amor por sus hijas y la lucha por proteger a su nieta. Una historia que cruza fronteras y generaciones, y que nos invita a mirar de cerca las heridas que muchas veces permanecen ocultas detrás de una sonrisa.</p>
+            <p>En estas páginas también descubrimos el poder de los vínculos familiares, la importancia de escuchar, el valor de pedir ayuda y la posibilidad de transformar el dolor en comprensión y acompañamiento.</p>
           </div>
-          
-          <p style="margin-bottom: 1rem;"><strong>ELLAS</strong> es mucho más que un libro autobiográfico. Es el relato de una mujer que se enfrentó a la violencia, al silencio y a la enfermedad, sin dejar de buscar una salida y protegiendo a los suyos.</p>
-          
-          <button class="btn">Leer un Capítulo</button>
+
+          <!-- ELEMENTO DESPLEGABLE INTERACTIVO PARA EL CAPÍTULO 17 -->
+          <details style="cursor: pointer; margin-top: 1.5rem;">
+            
+            <!-- Botón desplegable integrado con el estilo de la web -->
+            <summary style="background: var(--gold-accent, #CFA144); color: #fff; padding: 0.8rem 2rem; border-radius: 30px; text-align: center; font-weight: 600; font-size: 0.98rem; list-style: none; outline: none; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.3); transition: all 0.3s ease; width: fit-content; display: inline-block;">
+              📖 Leer Fragmento: Capítulo 17
+            </summary>
+
+            <!-- Contenido que se despliega al hacer clic -->
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed rgba(207, 161, 68, 0.4); text-align: left;">
+              
+              <div style="text-align: center; margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-dark, #333); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.3rem;">Cuando la esperanza fue puesta a prueba</h4>
+                <p style="color: var(--text-muted, #666); font-size: 0.9rem; font-style: italic;">Un extracto exclusivo del libro.</p>
+              </div>
+
+              <div style="color: var(--text-muted, #4a4a4a); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                <p style="margin-bottom: 1rem;">
+                  Transcurría aproximadamente un año desde que había comenzado a vivir en España. Durante ese tiempo había intentado construir una estabilidad. No era una vida perfecta, pero era un camino que me acercaba a la posibilidad de estar más cerca de mi hija y de mi nieta.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                  Yo pensaba que, después de todo lo que habíamos vivido, poco a poco las cosas encontrarían un equilibrio. Pero la vida todavía tenía preparada una prueba más.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                  Pasaron las horas. Yo esperaba su llamada sin saber qué había ocurrido. Sentía una inquietud difícil de explicar. Una madre aprende a sentir cuando algo no está bien. Cuando finalmente escuché su voz, era casi medianoche. Supe inmediatamente que algo estaba mal. No era la misma voz de siempre. Era una voz rota. Una voz que intentaba explicar algo que parecía imposible de aceptar.
+                </p>
+                
+                <!-- Frase destacada -->
+                <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--gold-accent, #CFA144); background: rgba(207, 161, 68, 0.05); font-style: italic; color: var(--text-dark, #222); font-size: 1.05rem; border-radius: 0 10px 10px 0;">
+                  —Mami, dieron la orden de quitarme a mi hija. En unos días pueden venir por ella.
+                </blockquote>
+
+                <p style="margin-bottom: 1rem;">
+                  Sentí que el tiempo se detenía. Repetía sus palabras una y otra vez. No entendía completamente lo que estaba pasando, o quizás una parte de mí simplemente no quería aceptarlo. Aunque estábamos lejos, pude sentir el dolor de mi hija.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                  Esa noche comprendí que ya no podía permanecer solamente como una madre que escuchaba. Ya no solamente quería acompañar. Necesitaba encontrar una manera de que la historia de Laura pudiera ser escuchada.
+                </p>
+              </div>
+
+              <!-- Bloque de cierre y llamada a la acción -->
+              <div style="background: rgba(253, 248, 240, 0.8); padding: 1.8rem; border-radius: 12px; border: 1px dashed var(--gold-accent, #CFA144); text-align: center;">
+                <h5 style="color: var(--gold-accent, #CFA144); font-size: 1.15rem; margin-bottom: 0.8rem;">¿Qué pasó después?</h5>
+                
+                <p style="color: var(--text-muted, #555); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                  Muchas personas conocieron nuestra historia cuando publiqué aquel video pidiendo ayuda para mi hija Laura y mi nieta. Más de 100.000 personas firmaron la petición y compartieron nuestro dolor. Pero hay una parte de esta historia que quizá nunca llegaron a conocer: lo que vivimos después, las consecuencias y los momentos de incertidumbre que marcaron a nuestra familia.
+                </p>
+
+                <p style="color: var(--gold-accent, #CFA144); font-style: italic; font-weight: 600; font-size: 1rem; margin-bottom: 1.5rem;">
+                  "Muchos conocieron nuestra historia. Pocos supieron lo que tuvimos que vivir después."
+                </p>
+
+                <a href="#contacto" class="btn" style="display: inline-block; padding: 0.7rem 1.8rem; border-radius: 30px; font-size: 0.95rem; text-decoration: none;">
+                  Adquirir el libro completo
+                </a>
+              </div>
+
+            </div>
+          </details>
+
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- ================================================================= -->
   <!-- 10. SECCIÓN CONTACTO                                              -->
   <!-- ================================================================= -->
   <section id="contacto" class="art-section">
+    <div class="abstract-shape petal-1"></div>
+
     <div class="section-content" style="text-align: center;">
       <div class="art-card" style="max-width: 700px; margin: 0 auto;">
         <h2 style="color: var(--gold-accent); font-weight: 400; margin-bottom: 1rem;">Contacto y Acompañamiento</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Si deseas comunicarte o solicitar información, este canal está abierto para ti.</p>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">
+          Si deseas comunicarte, solicitar información sobre los talleres presenciales o compartir tu testimonio, este canal está abierto para ti.
+        </p>
         <button class="btn">Enviar un Mensaje</button>
       </div>
     </div>
   </section>
 
-
   <!-- ================================================================= -->
-  <!-- 11. PIE DE PÁGINA (FOOTER)                                        -->
+  <!-- 11. PIE DE PÁGINA                                                 -->
   <!-- ================================================================= -->
   <footer>
     <p>&copy; 2026 LUCIA GOLD. Todos los derechos reservados. Un refugio de paz y resiliencia.</p>
