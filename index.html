@@ -18,8 +18,10 @@
       --text-dark: #2c2c2c;
       --text-muted: #555555;
       
-      /* Dorado Metálico Brillante */
+      /* Dorado Metálico Brillante y Contraste Editorial */
       --gold-accent: #cfa144;
+      --gold-deep: #966e22;
+      --gold-dark-text: #6e4e14;
       --gold-light: #fef8eb;
       --gold-metallic: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
       
@@ -34,7 +36,7 @@
       --blanco-perla: #fdfdfb;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -246,9 +248,7 @@
       gap: 2.5rem;
     }
 
-    /* Botones Estilizados */
-    .btn
-   /* ================================================================= */
+    /* ================================================================= */
     /* BOTONES UNIFICADOS (ESTILO EDITORIAL Y CÁLIDO)                   */
     /* ================================================================= */
     .btn,
@@ -394,7 +394,7 @@
           <img src="Meditacion1.png" alt="Flor de Loto y Vela" class="card-icon" style="width: 100%; max-width: 220px; height: auto; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.15);">
           <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Canal de YouTube</h3>
           <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Sesiones completas de meditación guiada y paisajes sonoros.</p>
-          <a href="https://www.youtube.com/@rincon_lu" target="_blank" class="btn">Ver en YouTube</a>
+          <a href="https://www.youtube.com/@rincon_lu" target="_blank" rel="noopener noreferrer" class="btn">Ver en YouTube</a>
         </div>
 
         <!-- Cajetilla 2: Cuarzos Iridiscentes (TikTok) -->
@@ -402,7 +402,7 @@
           <img src="Meditacion2.png" alt="Cuarzos de sanación" class="card-icon" style="width: 100%; max-width: 220px; height: auto; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.15);">
           <h3 style="color: var(--gold-accent); margin-bottom: 0.8rem;">Comunidad en TikTok</h3>
           <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Pausas conscientes breves y ejercicios de respiración.</p>
-          <a href="https://www.tiktok.com/@rincon_de_lu" target="_blank" class="btn btn-outline">Ver en TikTok</a>
+          <a href="https://www.tiktok.com/@rincon_de_lu" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver en TikTok</a>
         </div>
 
       </div>
@@ -424,15 +424,15 @@
       <div class="art-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem; margin-bottom: 2.5rem;">
         
         <!-- Imagen del Taller de Danza -->
-        <div style="width: 100%; max-width: 480px; margin-bottom: 1.8rem; overflow: hidden; border-radius: 16px; border: 1.5px solid var(--gold-accent, #CFA144); box-shadow: 0 8px 25px rgba(207, 161, 68, 0.2);">
+        <div style="width: 100%; max-width: 480px; margin-bottom: 1.8rem; overflow: hidden; border-radius: 16px; border: 1.5px solid var(--gold-accent); box-shadow: 0 8px 25px rgba(207, 161, 68, 0.2);">
           <img src="danza.png" alt="Taller de Danza y Percusión LUCIA GOLD" style="width: 100%; height: auto; display: block;">
         </div>
 
-        <h3 style="color: var(--gold-accent, #CFA144); font-size: 1.6rem; margin-bottom: 1rem;">
+        <h3 style="color: var(--gold-accent); font-size: 1.6rem; margin-bottom: 1rem;">
           Expresión Corporal y Ritmo
         </h3>
         
-        <p style="color: var(--text-muted, #666); font-size: 1.05rem; max-width: 650px; line-height: 1.6; margin-bottom: 2rem;">
+        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px; line-height: 1.6; margin-bottom: 2rem;">
           Un encuentro guiado para habitar el presente, soltar el control y transformar las emociones a través de la danza libre, el movimiento orgánico y los ritmos en vivo.
         </p>
 
@@ -463,8 +463,8 @@
           <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">Historias dulces y relajantes para acompañar el sueño de los niños.</p>
           
           <!-- Elemento desplegable con los 5 cuentos ocultos -->
-          <details style="cursor: pointer; text-align: left; margin-top: 1rem;">
-            <summary style="background: var(--gold-accent); color: #fff; padding: 0.7rem 1.5rem; border-radius: 30px; text-align: center; font-weight: 600; font-size: 0.95rem; list-style: none; outline: none; box-shadow: 0 4px 12px rgba(207, 161, 68, 0.25);">
+          <details style="text-align: left; margin-top: 1rem;">
+            <summary class="btn btn-summary" style="width: 100%;">
               📖 Ver los 5 Cuentos Especiales
             </summary>
 
@@ -472,31 +472,31 @@
               <ul style="list-style: none; padding: 0; margin: 0;">
                 
                 <li style="margin-bottom: 0.8rem;">
-                  <a href="https://youtu.be/rRNoUPcgsNA" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                  <a href="https://youtu.be/rRNoUPcgsNA" target="_blank" rel="noopener noreferrer" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
                     ✨ 1. Título de tu primer cuento
                   </a>
                 </li>
 
                 <li style="margin-bottom: 0.8rem;">
-                  <a href="https://youtu.be/AqEjU51nxzY" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                  <a href="https://youtu.be/AqEjU51nxzY" target="_blank" rel="noopener noreferrer" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
                     ✨ 2. Título de tu segundo cuento
                   </a>
                 </li>
 
                 <li style="margin-bottom: 0.8rem;">
-                  <a href="https://youtu.be/gf6fBRkGl_0" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                  <a href="https://youtu.be/gf6fBRkGl_0" target="_blank" rel="noopener noreferrer" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
                     ✨ 3. Título de tu tercer cuento
                   </a>
                 </li>
 
                 <li style="margin-bottom: 0.8rem;">
-                  <a href="https://youtu.be/KgXAYZYQ6f0" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                  <a href="https://youtu.be/KgXAYZYQ6f0" target="_blank" rel="noopener noreferrer" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
                     ✨ 4. Título de tu cuarto cuento
                   </a>
                 </li>
 
                 <li>
-                  <a href="https://youtu.be/SHetRcUI_zo" target="_blank" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
+                  <a href="https://youtu.be/SHetRcUI_zo" target="_blank" rel="noopener noreferrer" style="color: var(--text-dark); text-decoration: none; font-size: 0.93rem; display: block; font-weight: 500;">
                     ✨ 5. Título de tu quinto cuento
                   </a>
                 </li>
@@ -522,32 +522,32 @@
   <!-- ================================================================= -->
   <!-- 9. SECCIÓN LIBROS (CON EXTRACTO INTERACTIVO DEL CAPÍTULO 17)      -->
   <!-- ================================================================= -->
-<section id="libros" class="art-section">
-  <div class="abstract-shape petal-2"></div>
-  <div class="abstract-shape petal-4"></div>
+  <section id="libros" class="art-section">
+    <div class="abstract-shape petal-2"></div>
+    <div class="abstract-shape petal-4"></div>
 
-  <div class="section-content">
-    <div class="section-title">
-      <h2>Obras Literarias</h2>
-      <p>Escritas desde la experiencia vivida, el amor incondicional y la fuerza para romper el silencio.</p>
-    </div>
-
-    <div class="art-card book-grid">
-      <div class="book-cover-wrapper">
-        <img src="portada-E_Book.jpg" alt="Portada Oficial de ELLAS - Lucia Gold" class="book-cover">
+    <div class="section-content">
+      <div class="section-title">
+        <h2>Obras Literarias</h2>
+        <p>Escritas desde la experiencia vivida, el amor incondicional y la fuerza para romper el silencio.</p>
       </div>
-      
-      <div class="book-details">
-        <h3>ELLAS — Una historia de amor, resistencia y esperanza</h3>
-        <div class="book-subtitle">Por Lucia Gold | Obra Autobiográfica</div>
-        
-        <div class="book-description">
-          <p><strong>ELLAS</strong> es mucho más que un libro autobiográfico. Es el relato de una mujer que, a lo largo de su vida, ha tenido que enfrentarse a la violencia, al silencio, a la enfermedad y a situaciones que pusieron a prueba sus fuerzas, sin dejar de buscar una salida.</p>
-          <p>A través de sus recuerdos, la autora recorre su infancia, las huellas que dejan las experiencias difíciles, la maternidad, el amor por sus hijas y la lucha por proteger a su nieta. Una historia que cruza fronteras y generaciones, y que nos invita a mirar de cerca las heridas que muchas veces permanecen ocultas detrás de una sonrisa.</p>
-          <p>En estas páginas también descubrimos el poder de los vínculos familiares, la importancia de escuchar, el valor de pedir ayuda y la posibilidad de transformar el dolor en comprensión y acompañamiento.</p>
-        </div>
 
-       <!-- BOTONES DE AMAZON Y FRAGMENTO UNIFICADOS -->
+      <div class="art-card book-grid">
+        <div class="book-cover-wrapper">
+          <img src="portada-E_Book.jpg" alt="Portada Oficial de ELLAS - Lucia Gold" class="book-cover">
+        </div>
+        
+        <div class="book-details">
+          <h3>ELLAS — Una historia de amor, resistencia y esperanza</h3>
+          <div class="book-subtitle">Por Lucia Gold | Obra Autobiográfica</div>
+          
+          <div class="book-description">
+            <p><strong>ELLAS</strong> es mucho más que un libro autobiográfico. Es el relato de una mujer que, a lo largo de su vida, ha tenido que enfrentarse a la violencia, al silencio, a la enfermedad y a situaciones que pusieron a prueba sus fuerzas, sin dejar de buscar una salida.</p>
+            <p>A través de sus recuerdos, la autora recorre su infancia, las huellas que dejan las experiencias difíciles, la maternidad, el amor por sus hijas y la lucha por proteger a su nieta. Una historia que cruza fronteras y generaciones, y que nos invita a mirar de cerca las heridas que muchas veces permanecen ocultas detrás de una sonrisa.</p>
+            <p>En estas páginas también descubrimos el poder de los vínculos familiares, la importancia de escuchar, el valor de pedir ayuda y la posibilidad de transformar el dolor en comprensión y acompañamiento.</p>
+          </div>
+
+          <!-- BOTONES DE AMAZON Y FRAGMENTO UNIFICADOS -->
           <div style="margin: 1.5rem 0 0.5rem 0;">
             <details>
               <div class="book-actions">
@@ -603,7 +603,8 @@
       </div>
     </div>
   </section>
- <!-- ================================================================= -->
+
+  <!-- ================================================================= -->
   <!-- 10. SECCIÓN CONTACTO                                              -->
   <!-- ================================================================= -->
   <section id="contacto" class="art-section">
@@ -644,7 +645,7 @@
   <!-- 11. PIE DE PÁGINA                                                 -->
   <!-- ================================================================= -->
   <footer>
-    <p>&copy; 2026 LUCIA GOLD. Todos los derechos reservados. Un refugio de paz y resiliencia.</p>
+    <p>© 2026 LUCIA GOLD. Todos los derechos reservados. Un refugio de paz y resiliencia.</p>
   </footer>
 
 </body>
