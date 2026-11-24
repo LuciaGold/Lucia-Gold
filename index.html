@@ -248,48 +248,69 @@
 
     /* Botones Estilizados */
     .btn
-   
-          <!-- BOTÓN ESTRATÉGICO PRINCIPAL DE AMAZON -->
-          <div style="margin: 1.5rem 0 0.5rem 0;">
-            <a href="<!-- BOTÓN ESTRATÉGICO PRINCIPAL DE AMAZON -->
-          <div style="margin: 1.5rem 0 0.5rem 0;">
-            <a href="https://www.amazon.com/-/es/Olga-Lucia-Urrea-Gallego-ebook/dp/B0HSFH647L/ref=sr_1_1?crid=17L11GAGES443&dib=eyJ2IjoiMSJ9.12H2j8inMu6wicXRrDRFJoYGrwRkGBN6_sg8gZXQXrxXOePM4dAYLqChJ55F6cI-3nG7g9aObTkwjGHASOL_AO6I2CWXWgZp7jtEWdsX_FWByMZivFCpB1EslgH_Dk86QLuJoUk5HJXrWgDBgfr91Z1q8-ZFyW8yS5DT9tF7iJt9MoiLkhq8DD8QXJcuRjHK7cB8kNEbiwf2nWEInoP2sydkenhj9Xld_GvP0M1K7Z4.pyb3MQnbnJIB7QvBmwXnQW21mL3jpyIzQHEkyczKNfo&dib_tag=se&keywords=ebook+ellas%2C+olga+lucia+urrea+gallego+spanish+edition&nsdOptOutParam=true&qid=1795428976&sprefix=ebook+ELLAS%2C+Olga+Lucia+Urrea+Galleg%2Caps%2C293&sr=8-1" target="_blank" rel="noopener noreferrer" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.85rem 2.2rem; border-radius: 30px; font-size: 1.02rem; text-decoration: none; background: var(--gold-accent, #CFA144); color: #fff; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.35); transition: all 0.3s ease;">
-              🛒 Conseguir en Amazon
-            </a>
-            <p style="font-size: 0.85rem; color: var(--text-muted, #777); margin-top: 0.5rem; font-style: italic;">Disponible en formato digital y en edición impresa.</p>
-          </div>" target="_blank" rel="noopener noreferrer" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.85rem 2.2rem; border-radius: 30px; font-size: 1.02rem; text-decoration: none; background: var(--gold-accent, #CFA144); color: #fff; box-shadow: 0 4px 15px rgba(207, 161, 68, 0.35); transition: all 0.3s ease;">
-              🛒 Conseguir en Amazon
-            </a>
-            <p style="font-size: 0.85rem; color: var(--text-muted, #777); margin-top: 0.5rem; font-style: italic;">Disponible en formato digital y en edición impresa.</p>
-          </div>
-
-    {
-      display: inline-block;
-      padding: 0.85rem 2rem;
-      background-color: var(--gold-accent);
-      color: white;
-      text-decoration: none;
-      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+   /* ================================================================= */
+    /* BOTONES UNIFICADOS (ESTILO EDITORIAL Y CÁLIDO)                   */
+    /* ================================================================= */
+    .btn,
+    summary.btn-summary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.85rem;
+      min-height: 44px;
+      background-color: var(--gold-deep);
+      color: #fffdf9;
+      border: 1.5px solid var(--gold-deep);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.96rem;
       font-weight: 600;
-      transition: all 0.3s;
-      border: none;
+      letter-spacing: 0.03em;
+      text-decoration: none;
       cursor: pointer;
-      margin-top: 1rem;
+      list-style: none;
+      outline: none;
+      box-shadow: 0 6px 16px rgba(150, 110, 34, 0.18);
+      transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
     }
 
-    .btn:hover {
-      background-color: #b58a32;
-      transform: scale(1.02);
+    .btn:hover,
+    summary.btn-summary:hover {
+      background-color: var(--gold-dark-text);
+      border-color: var(--gold-dark-text);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(110, 78, 20, 0.24);
+    }
+
+    .btn:active,
+    summary.btn-summary:active {
+      transform: translateY(0);
     }
 
     .btn-outline {
-      background-color: transparent;
-      color: var(--gold-accent);
-      border: 1px solid var(--gold-accent);
+      background-color: #fffdf9;
+      color: var(--gold-dark-text);
+      border: 1.5px solid var(--gold-accent);
+      box-shadow: 0 4px 12px rgba(207, 161, 68, 0.12);
     }
 
     .btn-outline:hover {
       background-color: var(--gold-light);
+      border-color: var(--gold-deep);
+      color: var(--gold-dark-text);
+    }
+
+    summary.btn-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .book-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     /* Pie de página */
